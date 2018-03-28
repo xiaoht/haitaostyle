@@ -91,5 +91,7 @@
                 </div>
             </div>
         </div>
+        {!!Form::open()!!}
+        {!!Form::close()!!}
     </body>
 </html>
