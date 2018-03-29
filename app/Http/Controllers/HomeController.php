@@ -23,7 +23,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        flash('欢迎回来')->overlay();
         return view('home');
     }
 }
