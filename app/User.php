@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Http\Models\Discussion;
 use App\Http\Services\SendCloud;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -31,5 +32,10 @@ class User extends Authenticatable
     public function sendPasswordResetNotification($token)
     {
         SendCloud::sendPasswordResetNotification($token , $this);
+    }
+
+    public function discussions()
+    {
+       return $this->hasMany(Discussion::class);
     }
 }

@@ -1,0 +1,1 @@
+$('#flash-overlay-modal').modal();

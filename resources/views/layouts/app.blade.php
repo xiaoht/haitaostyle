@@ -12,7 +12,8 @@
 
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link href="/css/common.css" rel="stylesheet">
+    <link href="/css/bootstrap.css" rel="stylesheet">
 
     <!-- Scripts -->
     <script>
@@ -44,7 +45,17 @@
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
-                        &nbsp;
+                        <li><a href="/">主页</a></li>
+                        <li><a href="{{route('discussion.index')}}">社区</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Separated link</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li class="dropdown-header">Nav header</li>
+                                <li><a href="#">Separated link</a></li>
+                            </ul>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -80,12 +91,11 @@
         </nav>
         @include('flash::message')
         @yield('content')
+
     </div>
 
     <!-- Scripts -->
     <script src="/js/app.js"></script>
-    <script>
-        $('#flash-overlay-modal').modal();
-    </script>
+    <script src="/js/common.js"></script>
 </body>
 </html>

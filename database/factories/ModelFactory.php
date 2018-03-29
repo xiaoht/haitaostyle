@@ -18,7 +18,17 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->name,
         'email' => $faker->unique()->safeEmail,
+        'avatar' => $faker->imageUrl(256,256),
         'password' => $password ?: $password = bcrypt('secret'),
         'remember_token' => str_random(10),
+    ];
+});
+
+$factory->define(\App\Http\Models\Discussion::class, function (Faker\Generator $faker) {
+    return [
+        'title' => $faker->sentence,
+        'content' => $faker->paragraph,
+        'user_id' => 6,
+        'last_user_id' => 6,
     ];
 });
