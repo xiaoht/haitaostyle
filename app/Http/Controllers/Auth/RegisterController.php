@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Auth;
+use App\Events\Register;
 use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
@@ -69,6 +71,24 @@ class RegisterController extends Controller
             'confirmation_token' => $data['name'].str_random(40),
             'password' => bcrypt($data['password']),
         ]);
+        event(new Register($user));
         return $user;
+    }
+
+    public function verify($token)
+    {
+        $user = User::where('confirmation_token' , $token)->first();
+
+        if(is_null($user)){
+            flash('邮箱验证失败')->overlay();
+            return redirect('/');
+        }
+
+        $user->is_active = 1;
+        $user->confirmation_token = $user->name.str_random(40);
+        $user->save();
+        Auth::login($user);
+        flash('邮箱验证成功')->overlay();
+        return redirect('/');
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Listeners;
 
 use App\Events\Register;
+use App\Http\Services\SendCloud;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
@@ -26,6 +27,6 @@ class SendActiveEmail
      */
     public function handle(Register $event)
     {
-        //
+        SendCloud::sendActiveEmail($event->user);
     }
 }
