@@ -20,7 +20,7 @@
     16 => 'Illuminate\\Redis\\RedisServiceProvider',
     17 => 'Illuminate\\Auth\\Passwords\\PasswordResetServiceProvider',
     18 => 'Illuminate\\Session\\SessionServiceProvider',
-    19 => 'Illuminate\\Translation\\TranslationServiceProvider',
+    19 => 'Overtrue\\LaravelLang\\TranslationServiceProvider',
     20 => 'Illuminate\\Validation\\ValidationServiceProvider',
     21 => 'Illuminate\\View\\ViewServiceProvider',
     22 => 'App\\Providers\\AppServiceProvider',
@@ -28,6 +28,9 @@
     24 => 'App\\Providers\\EventServiceProvider',
     25 => 'App\\Providers\\RouteServiceProvider',
     26 => 'Collective\\Html\\HtmlServiceProvider',
+    27 => 'Naux\\Mail\\SendCloudServiceProvider',
+    28 => 'Laracasts\\Flash\\FlashServiceProvider',
+    29 => 'Barryvdh\\LaravelIdeHelper\\IdeHelperServiceProvider',
   ),
   'eager' => 
   array (
@@ -45,6 +48,8 @@
     11 => 'App\\Providers\\AuthServiceProvider',
     12 => 'App\\Providers\\EventServiceProvider',
     13 => 'App\\Providers\\RouteServiceProvider',
+    14 => 'Naux\\Mail\\SendCloudServiceProvider',
+    15 => 'Laracasts\\Flash\\FlashServiceProvider',
   ),
   'deferred' => 
   array (
@@ -131,14 +136,17 @@
     'redis' => 'Illuminate\\Redis\\RedisServiceProvider',
     'auth.password' => 'Illuminate\\Auth\\Passwords\\PasswordResetServiceProvider',
     'auth.password.broker' => 'Illuminate\\Auth\\Passwords\\PasswordResetServiceProvider',
-    'translator' => 'Illuminate\\Translation\\TranslationServiceProvider',
-    'translation.loader' => 'Illuminate\\Translation\\TranslationServiceProvider',
+    'translator' => 'Overtrue\\LaravelLang\\TranslationServiceProvider',
+    'translation.loader' => 'Overtrue\\LaravelLang\\TranslationServiceProvider',
+    'Overtrue\\LaravelLang\\Commands\\Publish' => 'Overtrue\\LaravelLang\\TranslationServiceProvider',
     'validator' => 'Illuminate\\Validation\\ValidationServiceProvider',
     'validation.presence' => 'Illuminate\\Validation\\ValidationServiceProvider',
     'html' => 'Collective\\Html\\HtmlServiceProvider',
     'form' => 'Collective\\Html\\HtmlServiceProvider',
     'Collective\\Html\\HtmlBuilder' => 'Collective\\Html\\HtmlServiceProvider',
     'Collective\\Html\\FormBuilder' => 'Collective\\Html\\HtmlServiceProvider',
+    'command.ide-helper.generate' => 'Barryvdh\\LaravelIdeHelper\\IdeHelperServiceProvider',
+    'command.ide-helper.models' => 'Barryvdh\\LaravelIdeHelper\\IdeHelperServiceProvider',
   ),
   'when' => 
   array (
@@ -172,13 +180,16 @@
     'Illuminate\\Auth\\Passwords\\PasswordResetServiceProvider' => 
     array (
     ),
-    'Illuminate\\Translation\\TranslationServiceProvider' => 
+    'Overtrue\\LaravelLang\\TranslationServiceProvider' => 
     array (
     ),
     'Illuminate\\Validation\\ValidationServiceProvider' => 
     array (
     ),
     'Collective\\Html\\HtmlServiceProvider' => 
+    array (
+    ),
+    'Barryvdh\\LaravelIdeHelper\\IdeHelperServiceProvider' => 
     array (
     ),
   ),
