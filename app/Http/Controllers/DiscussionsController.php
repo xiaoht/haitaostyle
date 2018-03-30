@@ -2,12 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Services\Parser;
+use Auth;
 use App\Http\Models\Discussion;
+use App\Http\Requests\DiscussionRequest;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class DiscussionsController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth' , ['only' => ['create' , 'store' , 'edit' , 'update']]);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +24,7 @@ class DiscussionsController extends Controller
      */
     public function index()
     {
-        $discussions = Discussion::all();
+        $discussions = Discussion::orderBy('created_at' , 'desc')->paginate(8);
         return view('discussion.index' , compact('discussions'));
     }
 
@@ -24,9 +33,9 @@ class DiscussionsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Discussion $discussion)
     {
-        //
+        return view('discussion.create' , compact('discussion'));
     }
 
     /**
@@ -35,9 +44,14 @@ class DiscussionsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(DiscussionRequest $request)
     {
-        //
+        $data = [
+            'user_id' => Auth::user()->id,
+            'last_user_id' => Auth::user()->id,
+        ];
+        $discussion = Discussion::create(array_merge($request->all() , $data));
+        return redirect(route('discussion.show' , ['discussion' => $discussion->id]));
     }
 
     /**
@@ -49,7 +63,9 @@ class DiscussionsController extends Controller
     public function show($id)
     {
         $discussion = Discussion::findOrFail($id);
-        return view('discussion.show' , compact('discussion'));
+        $parser = new Parser();
+        $html = $parser->makeHtml($discussion->content);
+        return view('discussion.show' , compact('discussion' , 'html'));
     }
 
     /**
@@ -60,7 +76,8 @@ class DiscussionsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $discussion = Discussion::findOrFail($id);
+        return view('discussion.edit' , compact('discussion'));
     }
 
     /**
@@ -70,9 +87,12 @@ class DiscussionsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(DiscussionRequest $request, $id)
     {
-        //
+        $discussion = Discussion::findOrFail($id);
+        $this->authorize('update' , $discussion);
+        $discussion->update($request->all());
+        return redirect(route('discussion.show' , ['id' => $id]));
     }
 
     /**
@@ -81,8 +101,8 @@ class DiscussionsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id , Discussion $discussion)
     {
-        //
+        $this->authorize('delete' , $discussion);
     }
 }

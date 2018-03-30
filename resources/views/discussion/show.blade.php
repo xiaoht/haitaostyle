@@ -12,7 +12,9 @@
                 <div class="media-body">
                     <h4 class="media-heading">
                         {{$discussion->title}}
-                        <a class="btn btn-lg btn-primary pull-right" href="{{route('discussion.edit' ,['discussion' => $discussion->id])}}" role="button">修改帖子</a>
+                        @if (Auth::user()->can('update', $discussion))
+                            <a class="btn btn-lg btn-primary pull-right" href="{{route('discussion.edit' ,['discussion' => $discussion->id])}}" role="button">修改帖子</a>
+                        @endif
                     </h4>
                     {{$discussion->user->name}}
                 </div>
@@ -24,7 +26,7 @@
         <div class="row">
             <div class="col-md-9" role="main">
                 <div class="blog-post">
-                    {{$discussion->content}}
+                    {!! $html !!}
                 </div>
             </div>
         </div>
