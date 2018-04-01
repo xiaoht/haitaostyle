@@ -13,7 +13,7 @@
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
     <link href="/css/common.css" rel="stylesheet">
-    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/font-awesome.css" rel="stylesheet">
 
     <!-- Scripts -->
     <script>
@@ -71,12 +71,11 @@
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
+                                    <li><a href="{{route('user.avatar')}}"><i class="fa fa-user"> 更换头像</i> </a></li>
                                     <li>
                                         <a href="{{ url('/logout') }}"
                                             onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                            退出
-                                        </a>
+                                                     document.getElementById('logout-form').submit();"><i class="fa fa-sign-out">退出登陆</i></a>
 
                                         <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
@@ -84,6 +83,8 @@
                                     </li>
                                 </ul>
                             </li>
+                            <li><img src="{{Auth::user()->name}}" class="img-circle" width="50" alt=""></li>
+
                         @endif
                     </ul>
                 </div>

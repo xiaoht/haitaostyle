@@ -31,6 +31,7 @@
     27 => 'Naux\\Mail\\SendCloudServiceProvider',
     28 => 'Laracasts\\Flash\\FlashServiceProvider',
     29 => 'Barryvdh\\LaravelIdeHelper\\IdeHelperServiceProvider',
+    30 => 'Intervention\\Image\\ImageServiceProvider',
   ),
   'eager' => 
   array (
@@ -50,6 +51,7 @@
     13 => 'App\\Providers\\RouteServiceProvider',
     14 => 'Naux\\Mail\\SendCloudServiceProvider',
     15 => 'Laracasts\\Flash\\FlashServiceProvider',
+    16 => 'Intervention\\Image\\ImageServiceProvider',
   ),
   'deferred' => 
   array (

@@ -77,6 +77,7 @@ class DiscussionsController extends Controller
     public function edit($id)
     {
         $discussion = Discussion::findOrFail($id);
+        $this->authorize('update' , $discussion);
         return view('discussion.edit' , compact('discussion'));
     }
 

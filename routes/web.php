@@ -13,7 +13,10 @@
 Auth::routes();
 Route::get('/', '\App\Http\Controllers\HomeController@index');
 Route::get('/email/verify/{token}' , ['as' => 'email.verify' , 'uses' => '\App\Http\Controllers\Auth\RegisterController@verify']);
+Route::get('/user/avatar' , ['as' => 'user.avatar' , 'uses' => '\App\Http\Controllers\UserController@avatar']);
+Route::post('/user/uploadAvatar' , ['as' => 'avatar' , 'uses' => '\App\Http\Controllers\UserController@uploadAvatar']);
 Route::resource('discussion' , '\App\Http\Controllers\DiscussionsController');
+Route::resource('comment' , '\App\Http\Controllers\CommentsController');
 
 
 
