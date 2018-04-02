@@ -51,7 +51,7 @@ class DiscussionsController extends Controller
             'last_user_id' => Auth::user()->id,
         ];
         $discussion = Discussion::create(array_merge($request->all() , $data));
-        return redirect(route('discussion.show' , ['discussion' => $discussion->id]));
+        return redirect(route('discussion.show' , ['id' => $discussion->id]));
     }
 
     /**

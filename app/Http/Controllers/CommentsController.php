@@ -44,7 +44,7 @@ class CommentsController extends Controller
     public function store(CommentRequest $request)
     {
         Comment::create(array_merge($request->all(),['user_id' => Auth::user()->id]));
-        return redirect(route('discussion.show' , ['discussion' => $request->get('discussion_id')]));
+        return redirect(route('discussion.show' , ['id' => $request->get('discussion_id')]));
     }
 
     /**

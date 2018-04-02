@@ -23,12 +23,14 @@
                                 <a href="{{route('discussion.show',['id' => $discussion->id])}}">{{$discussion->title}}</a>
                                 <div class="media-conversation-meta">
                                     <span class="media-conversation-replies">
-                                        <a href="#" >111</a>
+                                        <a href="#" >{{count($discussion->comments)}}</a>
                                         回复
                                     </span>
                                 </div>
                             </h4>
+                            <span class="time_show">{{$discussion->created_at->diffForHumans()}}</span>
                             {{$discussion->user->name}}
+
                         </div>
                     </div>
                 @endforeach

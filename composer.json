@@ -12,7 +12,8 @@
         "laravel/framework": "5.3.*",
         "laravelcollective/html": "v5.3.*",
         "naux/sendcloud": "^1.1",
-        "overtrue/laravel-lang": "~3.0"
+        "overtrue/laravel-lang": "~3.0",
+        "yuanchao/laravel-5-markdown-editor": "dev-master"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

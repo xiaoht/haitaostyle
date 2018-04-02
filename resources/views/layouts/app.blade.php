@@ -47,15 +47,6 @@
                     <ul class="nav navbar-nav">
                         <li><a href="/">主页</a></li>
                         <li><a href="{{route('discussion.index')}}">社区</a></li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Separated link</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li class="dropdown-header">Nav header</li>
-                                <li><a href="#">Separated link</a></li>
-                            </ul>
-                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -83,7 +74,7 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li><img src="{{Auth::user()->name}}" class="img-circle" width="50" alt=""></li>
+                            <li><img src="{{Auth::user()->avatar}}" class="img-circle" width="50" alt=""></li>
 
                         @endif
                     </ul>
@@ -98,5 +89,6 @@
     <!-- Scripts -->
     <script src="/js/app.js"></script>
     <script src="/js/common.js"></script>
+    <script src="/js/jquery.form.js"></script>
 </body>
 </html>

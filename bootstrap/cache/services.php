@@ -32,6 +32,7 @@
     28 => 'Laracasts\\Flash\\FlashServiceProvider',
     29 => 'Barryvdh\\LaravelIdeHelper\\IdeHelperServiceProvider',
     30 => 'Intervention\\Image\\ImageServiceProvider',
+    31 => 'YuanChao\\Editor\\EndaEditorServiceProvider',
   ),
   'eager' => 
   array (
@@ -52,6 +53,7 @@
     14 => 'Naux\\Mail\\SendCloudServiceProvider',
     15 => 'Laracasts\\Flash\\FlashServiceProvider',
     16 => 'Intervention\\Image\\ImageServiceProvider',
+    17 => 'YuanChao\\Editor\\EndaEditorServiceProvider',
   ),
   'deferred' => 
   array (

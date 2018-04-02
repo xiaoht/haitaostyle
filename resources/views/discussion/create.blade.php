@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
     <div class="container">
         <div class="row">
@@ -17,7 +16,7 @@
 
                     <div class="form-group{{ $errors->has('content') ? ' has-error' : '' }}">
                         {!! Form::label('content', '内容') !!}
-                        {!! Form::textarea('content' , old('content') , ['class' => 'form-control']) !!}
+                        {!! Form::textarea('content' , old('content') , ['class' => 'form-control' , 'placeholder' => '可以使用markdown编辑']) !!}
                         @if ($errors->has('content'))
                             <span class="help-block">
                                 <strong>{{ $errors->first('content') }}</strong>

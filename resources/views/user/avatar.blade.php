@@ -5,13 +5,18 @@
         <div class="row">
             <div class="col-md-6 col-md-offset-3" role="main">
                 <div class="text-center">
-                    <img src="{{Auth::user()->avatar}}" width="120" class="img-circle" alt="">
-                    {!! Form::open(['url' => route('avatar')])!!}
-                    {!! Form::file('avatar') !!}
-                    <div>
-                        {!! Form::submit('上传头像' , ['class' => 'btn btn-primary pull-right']) !!}
+                    <div id="validation-errors"></div>
+                    <img src="{{Auth::user()->avatar}}" width="120" class="img-circle" id="user-avatar" alt="">
+                    {!! Form::open(['url'=>route('avatar'),'files'=>true,'id'=>'avatar']) !!}
+                    <div class="text-center">
+                        <button type="button" class="btn btn-success avatar-button" id="upload-avatar">上传新的头像</button>
                     </div>
+                    {!! Form::file('avatar',['class'=>'avatar','id'=>'image']) !!}
                     {!! Form::close() !!}
+                    <div class="span5">
+                        <div id="output" style="display:none">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

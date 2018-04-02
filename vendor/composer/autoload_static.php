@@ -30,6 +30,10 @@ class ComposerStaticInitb6d2885341b5fb64f9dcaf2845ce385d
         array (
             'phpDocumentor\\Reflection\\' => 25,
         ),
+        'Y' => 
+        array (
+            'YuanChao\\Editor\\' => 16,
+        ),
         'X' => 
         array (
             'XdgBaseDir\\' => 11,
@@ -131,6 +135,10 @@ class ComposerStaticInitb6d2885341b5fb64f9dcaf2845ce385d
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
             1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
             2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
+        ),
+        'YuanChao\\Editor\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/yuanchao/laravel-5-markdown-editor/src',
         ),
         'XdgBaseDir\\' => 
         array (
@@ -368,6 +376,7 @@ class ComposerStaticInitb6d2885341b5fb64f9dcaf2845ce385d
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\DiscussionsController' => __DIR__ . '/../..' . '/app/Http/Controllers/DiscussionsController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
+        'App\\Http\\Controllers\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/UserController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
         'App\\Http\\Middleware\\RedirectIfAuthenticated' => __DIR__ . '/../..' . '/app/Http/Middleware/RedirectIfAuthenticated.php',
@@ -3535,6 +3544,10 @@ class ComposerStaticInitb6d2885341b5fb64f9dcaf2845ce385d
         'Text_Template' => __DIR__ . '/..' . '/phpunit/php-text-template/src/Template.php',
         'Webmozart\\Assert\\Assert' => __DIR__ . '/..' . '/webmozart/assert/src/Assert.php',
         'XdgBaseDir\\Xdg' => __DIR__ . '/..' . '/dnoegel/php-xdg-base-dir/src/Xdg.php',
+        'YuanChao\\Editor\\EndaEditor' => __DIR__ . '/..' . '/yuanchao/laravel-5-markdown-editor/src/EndaEditor.php',
+        'YuanChao\\Editor\\EndaEditorServiceProvider' => __DIR__ . '/..' . '/yuanchao/laravel-5-markdown-editor/src/EndaEditorServiceProvider.php',
+        'YuanChao\\Editor\\Facade\\EndaEditorFacade' => __DIR__ . '/..' . '/yuanchao/laravel-5-markdown-editor/src/Facade/EndaEditorFacade.php',
+        'YuanChao\\Editor\\Parsedown' => __DIR__ . '/..' . '/yuanchao/laravel-5-markdown-editor/src/Parsedown.php',
         'phpDocumentor\\Reflection\\DocBlock' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlock.php',
         'phpDocumentor\\Reflection\\DocBlockFactory' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlockFactory.php',
         'phpDocumentor\\Reflection\\DocBlockFactoryInterface' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlockFactoryInterface.php',
